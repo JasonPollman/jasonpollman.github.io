@@ -1,0 +1,224 @@
+<!--
+  Jason Pollman, Kris Tyte, Kevin VanEmmerick, & Charles Heiser
+  5/5/2014
+  ITCS 4121-001
+  -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Survival of the Biggest: A Historical Overview of Obesity in the U.S.</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+
+  <!-- JS Libraries -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+
+  <!-- Our JS Files -->
+  <script src="visualizations.js"></script>
+  <script src="actions.js"></script>
+  
+</head>
+
+<body>
+  <!-- Landing Overlay -->
+  <div id="landing-wrapper" class="page">
+
+    <!-- Text link that appears when landing is hidden -->
+    <div class="show-landing">
+      Show Introduction
+      <img class="little-arrow" src="images/arrow-return.png" alt="Show Introduction">
+    </div>
+
+    <!-- Social Buttons -->
+    <div id="social-wrapper">
+      <div class="social-text">Share</div>
+      <div class="social-button facebook"></div>
+      <div class="social-button twitter"></div>
+      <div class="social-button google"></div>
+      <div class="social-button git"></div>
+    </div>
+
+    <!-- The "Hero" Image -->
+    <div id="hero-wrapper">
+      <img class="hero" src="images/hero.png" alt="Survival of the Biggest: A Historical Overview of Obesity in the U.S.">
+    </div>
+
+    <!-- Informational Section -->
+    <div id="info-wrapper">
+      <img class="see-button" src="images/see-for-yourself.png" alt="See for yourself!">
+      <br />
+      <div id="landing-info-left" class="col-left">
+        <h3 class="heading h1">About Obesity</h3>
+        <p class="section s1"><strong>An obese person has accumulated so much body fat that it might have a negative effect on their health.</strong> If a person's bodyweight is at least 20% higher than it should be, he or she is considered obese. If your Body Mass Index (BMI) is between 25 and 29.9 you are considered overweight. <em>If your BMI is 30 or over you are considered obese.</em>
+          <br /><br /><span class="source">Source: <a href="http://www.medicalnewstoday.com/info/obesity/">http://www.medicalnewstoday.com/info/obesity/</a></span>
+          <br /><br /><em>Our visualization uses the CDC's data from 1985 to 2010 decribing the percentage of the U.S. population with a BMI greator than or equal to 30 as our obesity rates.</em> 
+        </p>
+        <h3 class="heading h2">Obesity is an Epidemic!</h3>
+        <p class="section s2"><strong>Obesity in America is a major public health crisis. As of 2010 nearly 30% of the population was Obease.</strong> Today that number is even higher. High obesity rates increase obesity related disease. These diseases are typically chronic and require expensive treatments over many years. Beyond the costs there is no question: <em>Americans living with these diseases suffer.</em> Amputations, blindness, mobility constraints, medication difficulties (cost, side-effects, etc.) are a small list of some of the ways quality of life is diminished for Americans suffering with obesity related disease. Furthermore, the treatment costs for these diseases is typically beyond the ability of the afflicted to pay, and these costs become the burden of the public.
+          <br /><br /><strong>So why, in the age of information, are Americans as a population still continuing to exhibit historically record high obesity rates?</strong>Why is obesity still an increasing phenomenon across all age groups, all States, and all income levels?
+          A brief study of the problem reveals there is no silver bullet answer to these questions. Factors contributing to obesity are numerous, dynamic, and pervasive. Indeed, with much focus and research we may determine some factors, but we by no means claim to account for all factors. Here are the factors (variables) we've discovered through research which show potential correlation as contributing factors to the phenomenon of chronic obesity in America: <em><span id="categories"></span></em>
+        </p>
+
+      </div> <!-- // End landing-info-left // -->
+
+      <div id="landing-info-right" class="col-right">
+        <h3 class="heading h3">About Our Research</h3>
+        <p class="section s4">Our data analysis aims to illustrate how obesity is a multi-faceted phenomenon and each variable in and of itself is not a definitive factor explaining the recent trends in obesity, however, these factors, acting in concert on society, does indeed have a demonstrable effect. This analysis intends on demonstrating what the extent of that collective effect is and to what extent each of our recognized variables contributes to the phenomena.
+          <br /><br />This analysis will not include semantic ranges within our data (age, sex, ethnic group, etc.) rather we will treat the population (United States) as a whole. The primary reason for this choice is the scope of this project and built in time constraints.
+          <br /><br />We are aware there are additional variables which correlate with obesity either positively or negatively which are valid metrics, such as socioeconomic status, and are not included within the scope of this project. There are undoubtedly numerous other variables which remain largely unknown and this project makes no attempt to deduce to what extent the unknown factors influence the overall obesity trends. We simply aim to discover if our hypothesized factors do indeed play a role in the U.S. obesity rate.
+          <br /><br />
+          <a id="data-sources" class="source">View our Data Sources</a>
+          <br />
+          <a class="source" href="data.csv" style="margin-top: -5px">Download the Dataset</a>
+        </p>
+        <h3 class="heading h4">Our Conclusions</h3>
+        <p class="section s4">Through our research, we came to realize that many of the factors we studied, such as the decrease in Manual Labor over the years, and the increase in the availability of Kilo Calories per Capita does, indeed, play a role in the increase of obesity among U.S. citizens. We have used a statistical analysis to determine the percentage of likelihood that each of the factors we studied effects obesity rates.
+        <br /><br />Click the <strong><span class="see-button">"See for Yourself"</span></strong> button above to view our visualization and discover how we came to our conclusions.
+        </p>
+
+      </div> <!-- // End landing-info-right // -->
+
+      <div id="data-sources-div">
+        <div class="close-sources">
+          <span>X</span>
+        </div>
+        <h3>Data Sources:</h3>
+        <hr>
+        <ul>
+          <li><a href="http://apps.nccd.cdc.gov/brfss/" target="_blank">http://apps.nccd.cdc.gov/brfss/</a></li>
+          <li><a href="http://www.cdc.gov/obesity/downloads/obesity_trends_2010.ppt" target="_blank">http://www.cdc.gov/obesity/downloads/obesity_trends_2010.ppt</a></li>
+          <li><a href="http://www.cnpp.usda.gov/tools/IFS/NFSdatabase/QueNut.asp" target="_blank">http://www.cnpp.usda.gov/tools/IFS/NFSdatabase/QueNut.asp</a></li>
+          <li><a href="http://www.who.int/mediacentre/factsheets/fs311/en/" target="_blank">http://www.who.int/mediacentre/factsheets/fs311/en/</a></li>
+          <li><a href="http://www.multpl.com/united-states-population/table" target="_blank">http://www.multpl.com/united-states-population/table</a></li>
+          <li><a href="http://www.infoplease.com/ipa/A0933563.html" target="_blank">http://www.infoplease.com/ipa/A0933563.html</a></li>
+          <li><a href="http://www.bls.gov/" target="_blank">http://www.bls.gov/</a></li>
+        </ul>
+      </div>
+
+      <div id="footer">
+        <div>
+          Project Created by Jason Pollman, Kris Tyte, Kevin VanEmmerick, &amp; Charles Heiser | 2014
+        </div>
+      </div>
+
+    </div> <!-- End info-wrapper -->
+
+  </div> <!--// End landing-wrapper //-->
+
+  <!-- Visualization "Page" -->
+  <div id="vis-outer-wrapper">
+    
+    <!-- Headers -->
+    <div id="vis-wrapper">
+
+      <div id="vis-header">
+        <img class="vis-header-img" src="images/hero-small.png" width="180" alt="Survival of the Biggest: A Historical Overview of Obesity in the U.S.">
+        <h1>Survival of the Biggest</h1>
+        <h2>A Historical Overview of Obesity in the U.S.</h2>
+      </div>
+
+      <!-- Pie Vis' -->
+      <div id="vis-1-wrapper" class="vis-wrapper">
+        <h2>Factors &amp; Correlation of Likelihood</h2>
+        <hr>
+        <p><strong>For each "obesity factor" we analyzed below, we've calculated the likelihood that each either positively or negatively effects obesity rates in the U.S.</strong><br />Some factors correlate quite high with U.S. obesity rates, others seem to have no effect on U.S. obesity rates at all.
+        <br /><br />
+          The donut chart represents how likely the factor is linked to obesity; albeit a factor such as the percent of change in the corn syrup content in foods (which increases obesity as it increases), or one like the percentage of the population which works in a "manual labor" job (which increases obesity as it decreases).
+        <br /><br />
+          To determine each likelihood percentage, we calculated the area between the curve of the factor and the obesity curve. Then the total area of the obesity curve was calculated. If the area between the factor and the obesity curve was 0, then the likelihood yielded 100% (i.e. they would be the same curve, or direct inverses).  If the difference between the area between the factor and the obesity curve was greater than the total obesity curve, the likelihood yielded 0% (i.e. the factor is growing or decaying at a rate higher than 200% compared to the obesity curve). Other values lie between.
+        <br /><br />
+          <strong>Here's the algorithm:</strong>
+          <em>Likelihood = ([Area of the obesity curve]  - [Area between the two curves]) / [Area of the obesity curve]</em>
+        </p>
+        
+        <!-- Pie Vis' Appended Here -->
+        <div id="vis-1" class="vis"></div>
+
+      </div> <!-- // End vis-1-wrapper // -->
+
+      <br /><br /><br />
+
+      <!-- Bar Chart Vis -->
+      <div id="vis-2-wrapper" class="vis-wrapper">
+        <h2>Links to Obesity</h2>
+        <hr>
+        <p><strong>Here's the data graphed for the U.S. Obesity Rate and each category from 1985 to 2010.</strong>
+        <br /><br />
+          As you can see, as manual labor rates decline, obesity rises; as the number of Kilo Calories increases, obesity follows suite. We've provided this overlapping bar chart so that you can 'see for yourself' how each factor plays a role on the obesity rate in the U.S.
+        <br /><br />
+          <strong>You can click on any of the "ON/OFF" buttons below to toggle each factor's display on or off and view its description.</strong> Also, you can sort the x-axis by any one of the factors by using the drop-down menus below.
+        </p>
+        <ul id="vis-2-legend" class="legend-buttons">
+        </ul>
+        <div id="vis-2-legend-description"></div>
+        <div id="vis-2" class="vis">
+
+          <!-- Sort by Elements -->
+          <div id="sort-by-wrapper">
+            <div id="sort-by-title">Sort Data By:</div>
+            <select id="sort-by">
+              <option value="default">Year</option>
+            </select>
+            <select id="direction">
+              <option value="asc">Low to High</option>
+              <option value="desc">High to Low</option>
+            </select>
+          </div>
+
+          <!-- Bar Chart Appended Here -->
+
+        </div> <!-- // End vis-2 // -->
+
+        <!-- Add your own data -->
+        <div id="user-added-values">
+          <br />
+          <h3>Enter your own values to compare to obesity!</h3>
+          <hr>
+          <label for="user-values"><strong>Enter 25 <em>Comma Delimited</em> Values</strong> Ex: .123, .23, 0.123123, .78, 1</label>
+          <span id="user-values-error"></span><br />
+          <input id="user-values" type="text" value="">
+          <input id="user-values-submit" type="button" value="Submit"> <div id="counter">You've entered 0 data points.</div>
+          <span id="user-values-message"></span>
+          <hr>
+        </div>
+
+      </div> <!-- // End vis-2-wrapper // -->
+
+    </div> <!-- // End vis-wrapper // -->
+
+  </div> <!-- // End vis-outer-wrapper // -->
+
+  <!-- a box that will hold each factor's description on hover over. -->
+  <div id="factor-descriptions">
+    <div class="description"></div>
+  </div>
+
+  <!-- SVG Filters -->
+  <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+    <!-- Inset Shadow -->
+    <filter  id="inset-shadow">
+      <feOffset dx='0' dy='3' />
+      <feGaussianBlur stdDeviation='4' result='offset-blur' />
+      <feComposite operator='out' in='SourceGraphic' in2='offset-blur' result='inverse' />
+      <feFlood flood-color='black' flood-opacity='0.75' result='color' />
+      <feComposite operator='in' in='color' in2='inverse' result='shadow' />
+      <feComposite operator='over' in='shadow' in2='SourceGraphic' />
+    </filter>
+    <!-- Drop Shadow -->
+    <filter id="drop" x="0" y="0" width="200%" height="200%">
+    <feOffset result="offOut" in="SourceGraphic" dx="2" dy="5"/>
+      <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.4 0 0 0 0 0 0.4 0 0 0 0 0 0.4 0 0 0 0 0 1 0" />
+      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+    <filter id="f1">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </svg>
+</body> <!-- // End Body Tag // -->
+</html> <!-- // End HTML Tag // -->
